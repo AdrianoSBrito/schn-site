@@ -12,7 +12,7 @@ const local = process.env.ADAPTER === 'node';
 // O site é estático (páginas geradas na publicação).
 // Só o painel /keystatic roda no servidor (Cloudflare Workers).
 export default defineConfig({
-  site: 'https://schn-site.workers.dev',
+  site: 'https://schn-site.adrianoschonbrito.workers.dev',
   integrations: [react(), markdoc(), keystatic()],
   adapter: local ? node({ mode: 'standalone' }) : cloudflare({ prerenderEnvironment: 'node' }),
 });
