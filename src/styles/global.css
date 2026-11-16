@@ -121,9 +121,21 @@ a { color: inherit; }
   position: sticky; top: 0; z-index: 10; background: var(--preto);
   display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px;
   margin-inline: -16px;
+  container: cabecalho / inline-size;
 }
-.header__logo { display: block; border-radius: 4px; }
-.header__logo img { height: 40px; width: auto; }
+.header__logo { display: block; flex-shrink: 0; border-radius: 4px; }
+.header__logo img { display: block; height: 40px; width: auto; }
+.header nav { flex-shrink: 0; }
+/* Sem espaço para a logo completa: usa o ícone (logo 124 + 16 + menu 163) */
+.header__logo-icone { display: none !important; }
+@container cabecalho (max-width: 302px) {
+  .header__logo-completa { display: none !important; }
+  .header__logo-icone { display: block !important; }
+}
+/* Sem espaço nem com o ícone: tira o "Projetos" do menu (o "Ver Projetos" da página cumpre o papel) */
+@container cabecalho (max-width: 223px) {
+  .header nav li:not(:last-child) { display: none; }
+}
 .header nav ul { display: flex; gap: 8px; list-style: none; padding: 0; }
 
 /* ---------- Introdução ---------- */
@@ -194,9 +206,12 @@ a { color: inherit; }
 .figura figcaption { color: var(--cinza); text-align: center; }
 
 /* ---------- Rodapé ---------- */
-.rodape { display: flex; align-items: center; gap: 16px; }
-.rodape__logo img { height: 40px; width: auto; }
-.rodape__assinatura { flex: 1; color: var(--cinza); white-space: pre-line; }
+.rodape { display: flex; align-items: center; gap: 16px; container: rodape / inline-size; }
+.rodape__logo { flex-shrink: 0; }
+.rodape__logo img { display: block; height: 40px; width: auto; }
+.rodape__corpo { flex: 1; min-width: 0; display: flex; align-items: center; gap: 16px; }
+.rodape__links { flex-shrink: 0; }
+.rodape__assinatura { flex: 1; min-width: max-content; color: var(--cinza); white-space: pre-line; }
 .rodape__links { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; list-style: none; padding: 0; }
 
 /* ---------- Formulário ---------- */
@@ -249,3 +264,10 @@ select.campo__controle option { background: var(--preto); color: var(--branco); 
 .form__aviso[data-tipo='sucesso'] { background: var(--verde-900); }
 .form__aviso[data-tipo='erro'] { border: 2px solid var(--erro); background: transparent; }
 .visualmente-oculto { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Rodapé estreito: primeiro sai o ícone, depois os links descem para baixo da assinatura */
+@container rodape (max-width: 346px) { .rodape__logo { display: none; } }
+@container rodape (max-width: 285px) {
+  .rodape__corpo { flex-direction: column; align-items: flex-start; }
+  .rodape__corpo .rodape__links { align-items: flex-start; }
+}

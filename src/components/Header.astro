@@ -5,7 +5,8 @@ const { menu, nome } = Astro.props;
 ---
 <header class="header">
   <a class="header__logo" href="/" aria-label={`${nome}, página inicial`}>
-    <img src="/images/logo-full.svg" alt="" width="124" height="40" />
+    <img class="header__logo-completa" src="/images/logo-full.svg" alt="" width="124" height="40" />
+    <img class="header__logo-icone" src="/images/logo-icon.svg" alt="" width="45" height="40" />
   </a>
   {menu.length > 0 && (
     <nav aria-label="Principal">
