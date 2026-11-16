@@ -1,0 +1,16 @@
+---
+import Botao from './Botao.astro';
+interface Props { assinatura: string; links: readonly { rotulo: string; link: string }[]; }
+const { assinatura, links } = Astro.props;
+---
+<footer class="rodape">
+  <a class="rodape__logo" href="/" aria-label="Página inicial">
+    <img src="/images/logo-icon.svg" alt="" width="45" height="40" />
+  </a>
+  <p class="rodape__assinatura">{assinatura}</p>
+  {links.length > 0 && (
+    <ul class="rodape__links">
+      {links.map((l) => <li><Botao href={l.link} variante="link" tamanho="sm">{l.rotulo}</Botao></li>)}
+    </ul>
+  )}
+</footer>

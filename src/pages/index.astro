@@ -1,0 +1,34 @@
+---
+import Base from '../layouts/Base.astro';
+import Botao from '../components/Botao.astro';
+import Card from '../components/Card.astro';
+import Chamada from '../components/Chamada.astro';
+import { reader } from '../lib/conteudo';
+const home = await reader.singletons.home.readOrThrow();
+---
+<Base titulo={home.seo.titulo} descricao={home.seo.descricao}>
+  <section class="intro">
+    <div class="intro__texto">
+      <h1 class="intro__titulo t-titulo-1">{home.titulo}</h1>
+      <p class="intro__bio">{home.bio}</p>
+    </div>
+    {home.botoes.length > 0 && (
+      <div class="intro__acoes">
+        {home.botoes.map((b) => <Botao href={b.link} variante={b.variante}>{b.rotulo}</Botao>)}
+      </div>
+    )}
+  </section>
+
+  <section class="secao" id="projetos" aria-labelledby="projetos-titulo">
+    <h2 class="secao__rotulo" id="projetos-titulo">{home.rotuloProjetos}</h2>
+    <ul class="grade">
+      {home.projetos.map((p) => (
+        <li class={`grade__item ${p.formato === 'horizontal' ? 'grade__largo' : ''}`}>
+          <Card {...p} />
+        </li>
+      ))}
+    </ul>
+  </section>
+
+  {home.chamada.titulo && <Chamada {...home.chamada} />}
+</Base>

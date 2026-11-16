@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { configuracoes } from '../lib/conteudo';
+interface Props { titulo?: string | null; descricao?: string | null; }
+const cfg = await configuracoes();
+const titulo = Astro.props.titulo ? `${Astro.props.titulo} · ${cfg.nome}` : cfg.nome;
+const descricao = Astro.props.descricao || cfg.descricao;
+---
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{titulo}</title>
+    {descricao && <meta name="description" content={descricao} />}
+    {!cfg.indexar && <meta name="robots" content="noindex, nofollow" />}
+    <meta name="theme-color" content="#121417" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo-icon.svg" />
+    <link rel="preload" href="/fonts/BDLifelessGrotesk-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <meta property="og:title" content={titulo} />
+    {descricao && <meta property="og:description" content={descricao} />}
+    <meta property="og:type" content="website" />
+  </head>
+  <body>
+    <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+    <div class="pagina">
+      <Header menu={cfg.menu} nome={cfg.nome} />
+      <main id="conteudo">
+        <slot />
+      </main>
+      <Footer assinatura={cfg.rodape.assinatura} links={cfg.rodape.links} />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,11 @@
+---
+import Badge from './Badge.astro';
+import { rotuloBadge } from '../lib/conteudo';
+interface Props { lista: readonly string[]; }
+const itens = Astro.props.lista.map((b) => rotuloBadge[b]).filter(Boolean);
+---
+{itens.length > 0 && (
+  <ul class="badges" aria-label="Etiquetas">
+    {itens.map((b) => <li><Badge variante={b.variante}>{b.texto}</Badge></li>)}
+  </ul>
+)}

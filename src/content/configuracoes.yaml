@@ -1,0 +1,19 @@
+nome: Schn Estúdio
+descricao: Estúdio de UI/UX e Branding em São Paulo. Interfaces e marcas em que tudo tem função.
+indexar: false
+menu:
+  - rotulo: Projetos
+    link: /#projetos
+    estilo: ghost
+  - rotulo: Contato
+    link: /contato
+    estilo: stroke
+rodape:
+  assinatura: |-
+    © 2026
+    Schn Estúdio
+  links:
+    - rotulo: schn.adriano@gmail.com
+      link: mailto:schn.adriano@gmail.com
+    - rotulo: Política de Privacidade
+      link: /politica-de-privacidade

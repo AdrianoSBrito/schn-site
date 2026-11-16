@@ -1,0 +1,26 @@
+---
+import Base from '../../layouts/Base.astro';
+import Botao from '../../components/Botao.astro';
+import Badges from '../../components/Badges.astro';
+import Blocos from '../../components/Blocos.astro';
+import { reader } from '../../lib/conteudo';
+
+export async function getStaticPaths() {
+  const cases = await reader.collections.cases.all();
+  return cases.map((c) => ({ params: { slug: c.slug }, props: { entrada: c.entry } }));
+}
+const { entrada } = Astro.props;
+---
+<Base titulo={entrada.seo.titulo || entrada.titulo} descricao={entrada.seo.descricao || entrada.subtitulo}>
+  <section class="intro">
+    <div><Botao href="/#projetos" variante="ghost" tamanho="sm">← Voltar</Botao></div>
+    <div class="intro__texto">
+      <div class="intro__cabeca">
+        <h1 class="t-titulo-1">{entrada.titulo}</h1>
+        <Badges lista={entrada.badges} />
+      </div>
+      {entrada.subtitulo && <p class="intro__bio">{entrada.subtitulo}</p>}
+    </div>
+  </section>
+  <Blocos blocos={entrada.blocos} />
+</Base>

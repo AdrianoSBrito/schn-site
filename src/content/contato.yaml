@@ -1,0 +1,25 @@
+titulo: Vamos conversar.
+texto: |-
+  Conte o problema, não a solução.
+  Com três ou quatro frases eu já consigo voltar com as perguntas certas.
+servicos:
+  - Interface (UI/UX)
+  - Identidade Visual
+investimento:
+  - Até 5 mil reais
+  - De 6 a 10 mil reais
+  - De 11 a 15 mil reais
+  - De 16 a 20 mil reais
+  - De + de 21 mil reais
+colaboradores:
+  - Até 5
+  - De 6 a 25
+  - De 26 a 50
+  - De 51 a 100
+  - Mais de 100
+rotuloEnviar: Enviar mensagem
+mensagemSucesso: Mensagem enviada. Te respondo em até 3 dias úteis.
+chaveFormulario: ''
+seo:
+  titulo: Contato
+  descricao: ''

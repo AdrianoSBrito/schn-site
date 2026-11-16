@@ -1,0 +1,22 @@
+---
+import Badges from './Badges.astro';
+import { atributosLink } from '../lib/conteudo';
+interface Props {
+  titulo: string; descricao: string; imagem: string | null; alt: string;
+  badges: readonly string[]; formato: 'vertical' | 'horizontal'; link: string; nivel?: 'h3' | 'h2';
+}
+const { titulo, descricao, imagem, alt, badges, formato, link, nivel = 'h3' } = Astro.props;
+const Titulo = nivel;
+---
+<article class={`card card--${formato}`}>
+  {imagem ? <img class="card__img" src={imagem} alt={alt} loading="lazy" decoding="async" /> : <div class="card__img" aria-hidden="true" />}
+  <div class="card__corpo">
+    <div class="card__texto">
+      <Titulo class="card__titulo t-titulo-3">
+        {link ? <a class="card__link" {...atributosLink(link)}>{titulo}</a> : titulo}
+      </Titulo>
+      <p class="card__descricao">{descricao}</p>
+    </div>
+    <Badges lista={badges} />
+  </div>
+</article>

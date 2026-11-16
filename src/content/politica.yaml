@@ -1,0 +1,29 @@
+titulo: Política de Privacidade
+atualizadaEm: 2026-11-15
+introducao: Como o Schn Estúdio trata as informações que você compartilha conosco.
+secoes:
+  - titulo: Quem somos
+    texto: Esse é o site do Schn Estúdio, responsável pelas informações descritas aqui. Para qualquer assunto sobre os seus dados, fale com a gente em schn.adriano@gmail.com.
+  - titulo: O que coletamos
+    texto: |-
+      Só o que você escreve no formulário de contato: nome, e-mail, telefone, empresa, site, cargo, número de colaboradores, rede social (se quiser informar), como conheceu o estúdio e as respostas sobre o seu projeto — o desafio, as entregas e a faixa de investimento.
+      Não usamos cookies de rastreamento nem ferramentas de publicidade. Como todo site, o servidor registra dados técnicos de acesso, como o endereço IP e o navegador, para manter o site seguro e funcionando.
+  - titulo: Para que usamos
+    texto: |-
+      - Responder o seu contato.
+      - Entender o seu projeto e preparar uma proposta.
+      - Manter o histórico da nossa conversa.
+      Não vendemos os seus dados nem os passamos a terceiros para fins de marketing.
+  - titulo: Com quem compartilhamos
+    texto: 'Para o site funcionar, contamos com serviços que tratam dados em nosso nome: o Framer, que hospeda o site e o nosso sistema interno; o Google, por onde recebemos o aviso de cada contato por e-mail; e o Figma, em que enviamos o convite para os arquivos com o e-mail fornecido.'
+  - titulo: Por quanto tempo guardamos
+    texto: Enquanto houver conversa ou relação comercial com você e, depois disso, pelo tempo que a lei exigir. Você pode pedir a exclusão a qualquer momento.
+  - titulo: Seus direitos
+    texto: Pela Lei Geral de Proteção de Dados (Lei nº 13.709/2018), você pode confirmar se temos dados seus, acessá-los, corrigi-los, pedir a exclusão, revogar o seu consentimento e saber com quem eles foram compartilhados. Basta escrever para schn.adriano@gmail.com. Respondemos em até 15 dias.
+  - titulo: Segurança
+    texto: Os dados trafegam criptografados (HTTPS) e ficam em um sistema de acesso restrito, protegido por senha.
+  - titulo: Mudanças nessa política
+    texto: Se esta política mudar, atualizamos esta página e a data no topo.
+rodape:
+  pergunta: Dúvidas sobre seus dados?
+  contato: schn.adriano@gmail.com

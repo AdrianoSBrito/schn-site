@@ -1,0 +1,18 @@
+---
+import { atributosLink } from '../lib/conteudo';
+interface Props {
+  href?: string;
+  variante?: 'primario' | 'secundario' | 'stroke' | 'ghost' | 'link';
+  tamanho?: 'sm' | 'md' | 'lg';
+  type?: 'button' | 'submit';
+  disabled?: boolean;
+  class?: string;
+}
+const { href, variante = 'primario', tamanho = 'md', type = 'button', disabled = false, class: extra = '' } = Astro.props;
+const classe = ['botao', `botao--${variante}`, tamanho !== 'md' && `botao--${tamanho}`, extra].filter(Boolean).join(' ');
+---
+{href ? (
+  <a class={classe} {...atributosLink(href)}><slot /></a>
+) : (
+  <button class={classe} type={type} disabled={disabled}><slot /></button>
+)}

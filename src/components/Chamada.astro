@@ -1,0 +1,10 @@
+---
+import Botao from './Botao.astro';
+interface Props { titulo: string; texto: string; rotuloBotao: string; link: string; }
+const { titulo, texto, rotuloBotao, link } = Astro.props;
+---
+<section class="chamada" aria-label={titulo}>
+  <h2 class="chamada__titulo t-titulo-1">{titulo}</h2>
+  {texto && <p class="chamada__texto">{texto}</p>}
+  {rotuloBotao && link && <Botao href={link} tamanho="lg">{rotuloBotao}</Botao>}
+</section>

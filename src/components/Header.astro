@@ -1,0 +1,17 @@
+---
+import Botao from './Botao.astro';
+interface Props { menu: readonly { rotulo: string; link: string; estilo: 'ghost' | 'stroke' }[]; nome: string; }
+const { menu, nome } = Astro.props;
+---
+<header class="header">
+  <a class="header__logo" href="/" aria-label={`${nome}, página inicial`}>
+    <img src="/images/logo-full.svg" alt="" width="124" height="40" />
+  </a>
+  {menu.length > 0 && (
+    <nav aria-label="Principal">
+      <ul>
+        {menu.map((m) => <li><Botao href={m.link} variante={m.estilo} tamanho="sm">{m.rotulo}</Botao></li>)}
+      </ul>
+    </nav>
+  )}
+</header>

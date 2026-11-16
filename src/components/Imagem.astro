@@ -1,0 +1,10 @@
+---
+interface Props { imagem: string | null; alt: string; legenda?: string | null; proporcao: '16-9' | '4-3'; }
+const { imagem, alt, legenda, proporcao } = Astro.props;
+---
+{imagem && (
+  <figure class={`figura figura--${proporcao}`}>
+    <img src={imagem} alt={alt} loading="lazy" decoding="async" />
+    {legenda && <figcaption class="t-legenda">{legenda}</figcaption>}
+  </figure>
+)}

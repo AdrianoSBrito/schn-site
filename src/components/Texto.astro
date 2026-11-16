@@ -1,0 +1,10 @@
+---
+import { formatarTexto } from '../lib/conteudo';
+interface Props { titulo?: string | null; texto?: string | null; legenda?: string | null; }
+const { titulo, texto, legenda } = Astro.props;
+---
+<section class="texto">
+  {titulo && <h2 class="texto__titulo t-titulo-3">{titulo}</h2>}
+  {texto && <div class="texto__corpo" set:html={formatarTexto(texto)} />}
+  {legenda && <p class="texto__legenda t-legenda">{legenda}</p>}
+</section>

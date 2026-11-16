@@ -1,0 +1,48 @@
+titulo: Interfaces e marcas em que tudo tem função.
+bio: |-
+  Sou Adriano Schön, designer de UI/UX e Branding em São Paulo.
+  Desenho produtos digitais, identidades visuais e sites em Framer.
+botoes:
+  - rotulo: Ver Projetos
+    link: /#projetos
+    variante: primario
+  - rotulo: Falar Comigo
+    link: /contato
+    variante: secundario
+rotuloProjetos: Projetos selecionados
+projetos:
+  - titulo: Odyssey
+    descricao: Uma carteira digital que reúne recursos de educação financeira para jovens.
+    imagem: /images/projetos/odyssey.png
+    alt: Estudante sentado, com o símbolo do Odyssey sobreposto à foto.
+    badges:
+      - uiux
+      - branding
+      - premiado
+    formato: vertical
+    link: ''
+  - titulo: Micaela Costa
+    descricao: Site profissional de serviços para a Micaela, terapeuta integrativa.
+    imagem: /images/projetos/micaela-costa.png
+    alt: Retrato de Micaela Costa.
+    badges:
+      - uiux
+      - branding
+    formato: vertical
+    link: ''
+  - titulo: Aresta
+    descricao: Uma marca  e newsletter brasileira sobre a cultura urbana do país.
+    imagem: /images/projetos/aresta.png
+    alt: Logotipo da Aresta em branco sobre fundo vermelho.
+    badges:
+      - branding
+    formato: horizontal
+    link: ''
+chamada:
+  titulo: Tem um grande projeto para tirar do papel?
+  texto: Me conta o seu problema e seu o prazo. Te respondo em até 3 dias úteis.
+  rotuloBotao: Falar Comigo
+  link: /contato
+seo:
+  titulo: ''
+  descricao: ''

@@ -1,0 +1,3 @@
+Coloque aqui o arquivo da fonte BD Lifeless Grotesk (versão variável):
+- BDLifelessGrotesk-Variable.woff2 (preferível) ou BDLifelessGrotesk-Variable.ttf
+Confirme antes que a licença permite uso em site (webfont).

@@ -1,0 +1,11 @@
+---
+import Texto from './Texto.astro';
+import Imagem from './Imagem.astro';
+import Chamada from './Chamada.astro';
+interface Props { blocos: readonly any[]; }
+---
+{Astro.props.blocos.map((b) => (
+  b.discriminant === 'texto' ? <Texto {...b.value} /> :
+  b.discriminant === 'imagem' ? <Imagem {...b.value} /> :
+  b.discriminant === 'chamada' ? <Chamada {...b.value} /> : null
+))}

@@ -1,0 +1,23 @@
+---
+import Base from '../layouts/Base.astro';
+import Blocos from '../components/Blocos.astro';
+import { reader } from '../lib/conteudo';
+
+const reservados = new Set(['contato', 'politica-de-privacidade', 'cases', 'keystatic', 'api']);
+export async function getStaticPaths() {
+  const paginas = await reader.collections.paginas.all();
+  return paginas
+    .filter((p) => !reservados.has(p.slug))
+    .map((p) => ({ params: { slug: p.slug }, props: { entrada: p.entry } }));
+}
+const { entrada } = Astro.props;
+---
+<Base titulo={entrada.seo.titulo || entrada.titulo} descricao={entrada.seo.descricao || entrada.subtitulo}>
+  <section class="intro">
+    <div class="intro__texto">
+      <h1 class="t-titulo-1">{entrada.titulo}</h1>
+      {entrada.subtitulo && <p class="intro__bio">{entrada.subtitulo}</p>}
+    </div>
+  </section>
+  <Blocos blocos={entrada.blocos} />
+</Base>
